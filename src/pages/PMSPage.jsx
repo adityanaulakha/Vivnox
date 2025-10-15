@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PMSPage = () => {
+  // Existing content reused from the original page
   const benefits = [
     {
       icon: '🧠',
@@ -29,155 +30,182 @@ const PMSPage = () => {
     {
       icon: '📈',
       title: 'Performance Tracking',
-      description: 'Comprehensive performance analytics with detailed attribution analysis and benchmark comparisons.',
-      color: 'from-blue-500 to-cyan-500'
+      description:
+        'Comprehensive performance analytics with detailed attribution analysis and benchmark comparisons.',
     },
     {
       icon: '🛡️',
       title: 'Risk Management',
-      description: 'Advanced risk assessment tools including VaR modeling, stress testing, and scenario analysis.',
-      color: 'from-purple-500 to-pink-500'
+      description:
+        'Advanced risk assessment tools including VaR modeling, stress testing, and scenario analysis.',
     },
     {
       icon: '📊',
       title: 'Portfolio Analytics',
-      description: 'Deep insights into portfolio composition, sector allocation, and asset distribution.',
-      color: 'from-orange-500 to-red-500'
+      description:
+        'Deep insights into portfolio composition, sector allocation, and asset distribution.',
     },
     {
       icon: '🎯',
       title: 'Goal-Based Investing',
-      description: 'Customized investment strategies aligned with your financial goals and risk appetite.',
-      color: 'from-green-500 to-teal-500'
-    }
+      description:
+        'Customized investment strategies aligned with your financial goals and risk appetite.',
+    },
   ];
 
   return (
-    <section id="pms" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-20 pb-16 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-r from-blue-200 to-purple-200 opacity-20 transform rotate-45 rounded-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-orange-200 to-yellow-200 opacity-20 transform -rotate-12 rounded-3xl animate-pulse animation-delay-2000"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16 opacity-0 animate-fadeInUp">
-          <span className="text-blue-600 font-semibold text-lg tracking-wider uppercase mb-4 block">
-            Premium Services
-          </span>
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Portfolio Management Services
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mt-2">
-              (PMS)
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our Portfolio Management Services combine cutting-edge technology
-            with expert oversight to deliver superior investment outcomes.
-          </p>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Benefits */}
-          <div className="opacity-0 animate-fadeInUp animation-delay-200">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-              Why Choose Our PMS?
-            </h2>
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl">
-                    {benefit.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      {benefit.title}
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+    <main id="pms" className="bg-white">
+      {/* Hero */}
+      <section className="pt-28 pb-20 border-b border-slate-200 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-teal-700 uppercase mb-5">Premium Services</p>
+              <h1 className="text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-slate-900 leading-[1.08]">
+                Portfolio Management Services (PMS)
+              </h1>
+              <p className="mt-6 text-[15px] md:text-[16px] leading-relaxed text-slate-600 max-w-2xl">
+                Our Portfolio Management Services combine cutting-edge technology with expert oversight to deliver
+                superior investment outcomes.
+              </p>
+              <div className="mt-10 flex gap-4">
+                <a href="#features" className="inline-flex items-center h-11 px-6 rounded-sm bg-slate-900 text-white text-[13px] font-medium tracking-wide hover:bg-slate-800">Explore features <span className="ml-2" aria-hidden>→</span></a>
+                <a href="#contact" className="inline-flex items-center h-11 px-6 rounded-sm border border-slate-300 text-slate-800 text-[13px] font-medium tracking-wide hover:border-slate-900 hover:text-slate-900">Talk to our team</a>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="aspect-[4/3] w-full rounded-xl overflow-hidden bg-gray-100 shadow-sm ring-1 ring-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1600&auto=format&fit=crop"
+                  alt="Portfolio management overview"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 gap-6 opacity-0 animate-fadeInUp animation-delay-400">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-white text-center shadow-xl hover:scale-105 transition-transform duration-300"
-              >
-                <h3 className="text-4xl lg:text-5xl font-bold mb-2">
-                  {stat.value}
-                </h3>
-                <p className="text-white/90 text-lg">{stat.label}</p>
+      {/* Visual showcase collage */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[ 
+              {
+                src: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=1200&auto=format&fit=crop',
+                alt: 'Equities performance overview'
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1200&auto=format&fit=crop',
+                alt: 'Fixed income analytics'
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop',
+                alt: 'Risk heatmap'
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1559523182-a284c3fb7cff?q=80&w=1200&auto=format&fit=crop',
+                alt: 'Portfolio allocation view'
+              }
+            ].map((img, i) => (
+              <div key={i} className="aspect-[4/3] rounded-lg overflow-hidden ring-1 ring-slate-200 shadow-sm group">
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Features Grid */}
-        <div className="mb-20">
-          <div className="text-center mb-12 opacity-0 animate-fadeInUp animation-delay-600">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive PMS Features
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Everything you need to manage and grow your wealth effectively
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 opacity-0 animate-fadeInUp"
-                style={{ animationDelay: `${800 + index * 100}ms` }}
-              >
-                <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 text-3xl`}>
-                  {feature.icon}
+      {/* Benefits */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-10">
+            {benefits.map((b, i) => (
+              <div key={i} className="border border-slate-200 rounded-lg p-8 bg-white">
+                <div className="mb-5">
+                  <div className="h-12 w-12 rounded-full bg-slate-50 ring-1 ring-slate-200 flex items-center justify-center text-lg">
+                    <span aria-hidden>{b.icon}</span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
+                <h3 className="text-sm font-semibold tracking-wide uppercase text-slate-900 mb-3">{b.title}</h3>
+                <p className="text-[13px] leading-relaxed text-slate-700">{b.description}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* CTA Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-12 text-white text-center shadow-2xl opacity-0 animate-fadeInUp animation-delay-1200">
-          <div className="flex items-center justify-center mb-6">
-            <span className="text-6xl">🏆</span>
-          </div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Elevate Your Investment Strategy?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied clients who trust our Portfolio Management Services
-            for their wealth creation journey.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Get Started Today
-            </button>
-            <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300">
-              Schedule Consultation
-            </button>
+      {/* Wide illustrative image */}
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <figure className="rounded-xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop"
+              alt="Advisor reviewing PMS dashboard"
+              loading="lazy"
+              className="w-full h-[320px] md:h-[420px] object-cover"
+            />
+          </figure>
+        </div>
+      </section>
+
+      {/* Stats band */}
+      <section className="py-16 bg-white border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {stats.map((s, i) => (
+              <div key={i} className="border border-slate-200 rounded-lg p-8 bg-white text-center">
+                <p className="text-4xl font-semibold text-slate-900 tracking-tight">{s.value}</p>
+                <p className="mt-2 text-[13px] tracking-widest uppercase text-slate-500">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-10">
+            <p className="text-xs font-semibold tracking-widest text-teal-700 uppercase mb-4">Capabilities</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 leading-[1.1]">Comprehensive PMS features</h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-slate-700">Everything you need to manage and grow your wealth effectively.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {features.map((f, i) => (
+              <div key={i} className="flex items-start gap-4 p-6 rounded-lg ring-1 ring-slate-200 bg-white hover:ring-slate-900 transition">
+                <div className="h-10 w-10 rounded-full bg-slate-50 ring-1 ring-slate-200 flex items-center justify-center text-base">
+                  <span aria-hidden>{f.icon}</span>
+                </div>
+                <div>
+                  <h3 className="text-[15px] font-semibold text-slate-900 mb-1">{f.title}</h3>
+                  <p className="text-[13px] text-slate-700 leading-relaxed max-w-prose">{f.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="border border-slate-200 rounded-xl p-12 md:p-16 bg-white">
+            <h2 className="text-[2.2rem] md:text-[3rem] font-semibold tracking-tight text-slate-900 leading-[1.08] mb-8">
+              Ready to elevate your investment strategy?
+            </h2>
+            <p className="text-[15px] md:text-[16px] leading-relaxed text-slate-600 max-w-3xl mb-10">
+              See how our PMS couples real-time monitoring with expert guidance to deliver outcomes aligned to your goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-5">
+              <a href="#contact" className="inline-flex items-center justify-center h-12 px-10 rounded-sm bg-slate-900 text-white text-[13px] font-medium tracking-wide hover:bg-slate-800">SCHEDULE CONSULTATION <span className="ml-3" aria-hidden>→</span></a>
+              <a href="#features" className="inline-flex items-center justify-center h-12 px-10 rounded-sm border border-slate-300 text-slate-800 text-[13px] font-medium tracking-wide hover:border-slate-900 hover:text-slate-900">VIEW FEATURES</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 
