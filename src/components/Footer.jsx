@@ -52,13 +52,13 @@ const Footer = () => {
   return (
     <footer className="bg-white text-slate-800 border-t border-slate-200 mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid md:grid-cols-5 gap-16">
+        <div className="grid md:grid-cols-12 items-start gap-16">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="md:col-span-2"
+            className="md:col-span-4"
           >
             <h3 className="text-2xl font-semibold tracking-tight mb-4 text-slate-900">Vionix</h3>
             <p className="text-sm text-slate-600 leading-relaxed max-w-sm mb-8">
@@ -91,6 +91,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 * (ci + 1) }}
               viewport={{ once: true }}
+              className="md:col-span-2"
             >
               <h4 className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase mb-5">{col.heading}</h4>
               <ul className="space-y-3 text-[13px]">
@@ -113,10 +114,10 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-start md:items-center justify-between mt-20 gap-8 border-t border-slate-200 pt-8 text-[12px] text-slate-500"
+          className="grid md:grid-cols-12 items-center mt-20 gap-6 border-t border-slate-200 pt-8 text-[12px] text-slate-500"
         >
-          <p>&copy; {new Date().getFullYear()} Vionix Wealth Management LLP. All rights reserved. LLPIN: ACP-8819</p>
-          <div className="flex gap-6">
+          <p className="md:col-span-6">&copy; {new Date().getFullYear()} Vionix Wealth Management LLP. All rights reserved. LLPIN: ACP-8819</p>
+          <div className="md:col-span-6 flex md:justify-end gap-6">
             <a href="#" className="hover:text-slate-900 transition flex items-center gap-1">Privacy <ArrowUpRight className="w-3 h-3" /></a>
             <a href="#" className="hover:text-slate-900 transition flex items-center gap-1">Terms <ArrowUpRight className="w-3 h-3" /></a>
             <a href="#" className="hover:text-slate-900 transition flex items-center gap-1">Security <ArrowUpRight className="w-3 h-3" /></a>
