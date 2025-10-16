@@ -124,7 +124,8 @@ const Hero = () => {
       </div>
 
       <div className="container-custom">
-        <div className="max-w-4xl relative" aria-live="polite" aria-atomic="true">
+        {/* Fixed-height grid ensures stable placement across slides */}
+        <div className="max-w-4xl relative grid grid-rows-[auto_auto_1fr_auto] gap-6 md:gap-8 min-h-[52vh] md:min-h-[50vh]" aria-live="polite" aria-atomic="true">
           <AnimatePresence mode="wait">
             <motion.h1
               key={current.id + '-h'}
@@ -157,7 +158,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.45, delay: 0.1 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
+              className="self-start flex flex-col sm:flex-row gap-4"
             >
               <button
                 onClick={() => handleScroll(current.ctaScroll)}
@@ -182,7 +183,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           aria-label="Hero topics"
           role="tablist"
-          className="mt-24 md:mt-28 border-t border-white/10 flex flex-wrap gap-10 text-sm font-medium"
+          className="mt-24 border-t border-white/10 flex flex-wrap gap-6 text-sm font-medium"
         >
             {slides.map((s, i) => {
               const active = i === index;
