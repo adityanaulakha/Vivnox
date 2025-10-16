@@ -58,7 +58,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Additional marketing sections */}
+  {/* Additional marketing sections */}
       <section className="py-32 bg-white" id="core-services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Intro two-column */}
@@ -138,6 +138,67 @@ const HomePage = () => {
           </div>
         </div>
 
+        {/* Platform in action: image mosaic */}
+        <section className="py-28 bg-white" id="platform-gallery">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between gap-6 mb-10">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">Platform in action</h2>
+              <a href="#" className="hidden md:inline-flex items-center text-sm font-medium text-slate-900 underline decoration-slate-300 underline-offset-[6px] hover:decoration-slate-900">View details →</a>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=60',
+                'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=60',
+                'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1611',
+                'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=60',
+                'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=60',
+                'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=60',
+                'https://images.unsplash.com/photo-1606189934846-a527add8a77b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
+                'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60'
+              ].map((src, i) => (
+                <div key={i} className={`relative overflow-hidden rounded-lg ring-1 ring-slate-200 bg-slate-100 ${i % 4 === 0 ? 'md:row-span-2 md:col-span-2' : ''}`}>
+                  <img src={src} alt="Platform showcase" loading="lazy" className="w-full h-full object-cover aspect-[4/3] md:aspect-auto" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Outcomes cards with images */}
+        <section className="py-24 bg-white" id="outcomes">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-10">
+              {[
+                {
+                  title: 'Data integrity at scale',
+                  desc: 'Automated validations and golden-source reconciliation to eliminate breaks and reduce operational risk.',
+                  img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60'
+                },
+                {
+                  title: 'Operational efficiency',
+                  desc: 'Streamlined workflows with managed services to free your teams for higher-value activities.',
+                  img: 'https://images.unsplash.com/photo-1557425529-b1ae9c141e7d?auto=format&fit=crop&w=1200&q=60'
+                },
+                {
+                  title: 'Governance & oversight',
+                  desc: 'Embedded controls and audit-ready reporting for confident compliance and stakeholder transparency.',
+                  img: 'https://images.unsplash.com/photo-1543269664-56d93c1b41a6?auto=format&fit=crop&w=1200&q=60'
+                }
+              ].map((card, i) => (
+                <div key={i} className="group bg-white border border-slate-200 rounded-xl overflow-hidden">
+                  <div className="aspect-[16/10] bg-slate-100 overflow-hidden">
+                    <img src={card.img} alt={card.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2">{card.title}</h3>
+                    <p className="text-[14px] leading-relaxed text-slate-700">{card.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Clients Section */}
         <section className="py-40 bg-white" id="clients">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,7 +252,7 @@ const HomePage = () => {
           <style>{`@keyframes logo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
         </section>
 
-        {/* Final CTA Section (revamped) */}
+      {/* Final CTA Section (revamped) */}
         <section id="get-started">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="border border-slate-200 rounded-xl md:p-16 bg-white">
