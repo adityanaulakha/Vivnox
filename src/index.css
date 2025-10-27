@@ -10,7 +10,14 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
+  }
+  
+  /* Apply smooth scrolling only when user prefers reduced motion is off */
+  @media (prefers-reduced-motion: no-preference) {
+    html.smooth-scroll {
+      scroll-behavior: smooth;
+    }
   }
   
   body {

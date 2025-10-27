@@ -50,7 +50,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white text-slate-800 border-t border-slate-200 mt-40">
+    <footer className="bg-white text-slate-800 border-t border-slate-200 mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid md:grid-cols-12 items-start gap-16">
           <motion.div

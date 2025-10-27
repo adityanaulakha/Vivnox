@@ -18,8 +18,8 @@ const slides = [
     label: 'WHO WE ARE',
     headline: 'EMPOWERING INVESTMENT\nMANAGEMENT',
     description: 'Vionix delivers integrated portfolio and investment management solutions combining advanced analytics, risk intelligence and expert oversight for the global buy-side.',
-    ctaScroll: 'contact',
-    secondaryScroll: 'solutions',
+    ctaScroll: '/contact',
+    secondaryScroll: '/solutions',
     type: 'image',
     src: 'https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?auto=format&fit=crop&w=1600&q=60',
     alt: 'Financial advisor reviewing portfolio performance charts on a laptop',
@@ -31,8 +31,8 @@ const slides = [
     label: 'DECISION CONFIDENCE',
     headline: 'DATA-DRIVEN RISK INTELLIGENCE',
     description: 'Harness real-time risk analytics, multi-factor performance attribution and scenario modelling to make sharper, faster portfolio decisions with confidence.',
-    ctaScroll: 'solutions',
-    secondaryScroll: 'pms',
+    ctaScroll: '/solutions',
+    secondaryScroll: '/pms',
     type: 'image',
     src: 'https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1600&q=60',
     alt: 'Close-up of digital stock market data and analytics dashboard',
@@ -44,8 +44,8 @@ const slides = [
     label: 'PRIVATE MARKETS',
     headline: 'INSIGHT ACROSS PRIVATE ASSETS',
     description: 'Unify fund, deal and portfolio company data for transparent monitoring, valuation workflows and proactive value creation across private markets.',
-    ctaScroll: 'pms',
-    secondaryScroll: 'contact',
+    ctaScroll: '/pms',
+    secondaryScroll: '/contact',
     type: 'image',
     src: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=60',
     alt: 'Professional wealth management meeting around a conference table',
@@ -71,9 +71,15 @@ const Hero = () => {
   // Removed keyboard manual controls since controls are gone
 
   const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Check if it's a page route (starts with /)
+    if (id.startsWith('/')) {
+      window.location.href = id;
+    } else {
+      // Otherwise, scroll to section on current page
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
@@ -111,7 +117,7 @@ const Hero = () => {
                   src={s.src}
                   alt=""
                   className="w-full h-full object-cover"
-                  fetchpriority={i === index ? 'high' : 'auto'}
+                  fetchPriority={i === index ? 'high' : 'auto'}
                 />
                 <div className="absolute inset-0 bg-black/55 mix-blend-multiply" />
               </>
@@ -123,7 +129,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="container-custom">
+      <div className="container-custom pt-16 md:pt-20">
         {/* Fixed-height grid ensures stable placement across slides */}
         <div className="max-w-4xl relative grid grid-rows-[auto_auto_1fr_auto] gap-6 md:gap-8 min-h-[52vh] md:min-h-[50vh]" aria-live="polite" aria-atomic="true">
           <AnimatePresence mode="wait">
@@ -164,7 +170,7 @@ const Hero = () => {
                 onClick={() => handleScroll(current.ctaScroll)}
                 className="inline-flex items-center justify-center rounded-md bg-white px-7 py-4 text-sm md:text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition"
               >
-                {current.label === 'DECISION CONFIDENCE' ? 'SEE PLATFORM' : current.label === 'PRIVATE MARKETS' ? 'DISCOVER MORE' : 'CONTACT US'} <span aria-hidden className="ml-2">→</span>
+                {current.label === 'DECISION CONFIDENCE' ? 'See Platform' : current.label === 'PRIVATE MARKETS' ? 'Discover More' : 'Contact Us'} <span aria-hidden className="ml-2">→</span>
               </button>
               <button
                 onClick={() => handleScroll(current.secondaryScroll)}
